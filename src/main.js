@@ -40,6 +40,11 @@
       'tap:delegate(menu[selected])': function(e){
         if (this.firstElementChild && e.pageY < this.firstElementChild.offsetTop) {
           menuState('remove', this);
+          var active, parent = this.parentNode;
+          while (!active && parent != e.currentTarget) {
+            if (parent.nodeName == 'MENU') menuState('set', active = parent);
+            parent = parent.parentNode;
+          }
         }
       }
     },

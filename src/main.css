@@ -105,7 +105,7 @@ x-slidemenu menu, x-slidemenu menu > *, x-slidemenu menu:before {
   background: inherit;
 }
 
-x-slidemenu > menu menu:not(selected){
+x-slidemenu > menu menu {
   z-index: 0;
   -webkit-transform: translateX(-100%);
   -moz-transform: translateX(-100%);
