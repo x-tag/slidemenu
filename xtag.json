@@ -1,7 +1,7 @@
 {
   "name": "Slide menu",
   "tagName": "x-slidemenu",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "Daniel Buchner",
   "description": "Multi-level slide menu with transactions",
   "demo": "demo/index.html",
@@ -19,11 +19,11 @@
     "attributes": {},
     "events": {},
     "methods": {
-        "back": "Goes back up the menu stack.",
-        "open": "Jumps to a particular menu item.  Takes a selector or a menu element."
+      "back": "Goes back up the menu stack.",
+      "open": "Jumps to a particular menu item.  Takes a selector or a menu element."
     },
     "getters": {
-        "currentMenu": "Returns the selected curren menu item."
+      "currentMenu": "Returns the selected curren menu item."
     },
     "setters": {}
   }
