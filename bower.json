@@ -1,9 +1,10 @@
 {
-  "name": "stub",
-  "description": "",
+  "name": "Slidemenu",
+  "description": "Multi-level slide menu with transactions",
   "version": "0.1.0",
   "keywords": [
-    "web-components",    
+    "web-components",
+    "element",
     "x-tag"
   ],
   "main": [

@@ -1,25 +1,25 @@
-(function(){  
-  
+(function(){
+
   function addMenuArrow(node){
     if (node.nodeName == 'MENU' && node.parentNode.nodeName != 'X-SLIDEMENU') {
       node.__slidemenuParent__ = node.parentNode;
       node.parentNode.setAttribute('x-slidemenu-node', '');
     }
   }
-  
+
   function removeMenuArrow(node){
     if (node.nodeName == 'MENU') {
       node.__slidemenuParent__.removeAttribute('x-slidemenu-node');
       delete node.__slidemenuParent__;
     }
   }
-  
+
   function menuState(action, menu) {
     action = action + 'Attribute';
     menu[action]('active', '');
     menu[action]('selected', '');
   }
-  
+
   xtag.register('x-slidemenu', {
     lifecycle: {
       created: function() {
@@ -27,8 +27,8 @@
         xtag.addObserver(this, 'removed', removeMenuArrow);
         xtag.query(this, 'menu').forEach(addMenuArrow);
       }
-    }, 
-    events: { 
+    },
+    events: {
       'tap:delegate(menu > *)': function(e){
         var menu = xtag.queryChildren(this, 'menu')[0];
         if (menu) {
@@ -58,7 +58,17 @@
     methods: {
       back: function(){
         var active = this.currentMenu;
-        if (active) menuState('remove', active);
+        if (active){
+          menuState('remove', active);
+          var next = active.parentNode;
+          while(next != this){
+            if (next.nodeName == 'MENU' && next.hasAttribute('selected')){
+              next.setAttribute('active','');
+              break;
+            }
+            next = next.parentNode;
+          }
+        }
       },
       open: function(selector){
         var menu = selector.nodeName ? selector : this.querySelector(selector);
@@ -66,7 +76,7 @@
           xtag.query(this, 'menu[selected]').forEach(function(node){
             if (!node.contains(menu)) menuState('remove', node);
           });
-          menuState('set', menu);     
+          menuState('set', menu);
           var parent = menu.parentNode;
           while (parent) {
             if (parent.nodeName == 'MENU') parent.setAttribute('selected', '');

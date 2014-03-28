@@ -1,17 +1,50 @@
 # About
 
-This repo is an X-Tag custom web-component stub that can be used as a starting point when building new elements.  It provides that basic tools and grunt tasks to get started.
+Multi-level slide menu with transactions
 
-# Dev Setup
-
+# Example
 ```
-Fork this repo, rename it, then clone it.
-
-$ npm install	// install bower tasks
-$ bower install	// install components
-$ grunt build   // build the dependencies
-
+<x-slidemenu id="slidemenu" title="All Categories">
+	<menu>
+	  <li>Clothes
+		<menu title="Clothes">
+		   <li>Shirts</li>
+		   <li>Pants</li>
+		   <li>Hats
+			 <menu title="Hats">
+			   <li>Top Hats</li>
+			   <li>BaseBall Caps</li>
+			   <li>Bollo Hats</li>
+			   <li>Cowboy Hats</li>
+			 </menu>
+		   </li>
+		</menu>
+	  </li>
+	  <li>Food
+		<menu title="Food">
+		  <li>Pizza</li>
+		  <li>Burritos</li>
+		  <li>Sandwiches
+			<menu title="Sandwiches">
+			  <li>Subs</li>
+			  <li>Panini</li>
+			  <li>Pita</li>
+			  <li>Melts</li>
+			</menu>
+		  </li>
+		</menu>
+	  </li>
+	  <li>Phones
+	   <menu title="Phones">
+		  <li>Smartphones</li>
+		  <li>Feature Phones</li>
+	   </menu>
+	  </li>
+	</menu>
+</x-slidemenu>
 ```
+
+
 
 # Links
 
