@@ -1,7 +1,7 @@
 {
   "name": "Slidemenu",
-  "description": "Multi-level slide menu with transactions",
-  "version": "0.1.1",
+  "description": "Multi-level slide menu with transitions.",
+  "version": "0.1.2",
   "keywords": [
     "web-components",
     "element",
